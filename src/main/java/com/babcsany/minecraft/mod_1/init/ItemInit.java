@@ -12,6 +12,5 @@ public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Mod_1.MOD_ID);
 
-    /*public static final RegistryObject<Item> KNURTH = ITEMS.register(BlockInit.KNURTH.get()
-    );*/
+
 }
