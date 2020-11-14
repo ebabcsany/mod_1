@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# ",
+    " #"
+  ],
+  "key": {
+    "#": {
+      "tag": "mod_1:ingredients/planks"
+    }
+  },
+  "result": {
+    "item": "minecraft:stick",
+    "count": 9
+  }
+}
