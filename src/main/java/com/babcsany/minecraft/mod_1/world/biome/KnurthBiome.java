@@ -5,8 +5,8 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.world.biome.*;
 
-public class ExampleBiome extends Biome {
-	public ExampleBiome(Builder biomeBuilder) {
+public class KnurthBiome extends Biome {
+	public KnurthBiome(Builder biomeBuilder) {
 		super(biomeBuilder);
 		this.addSpawn(EntityClassification.MONSTER, new SpawnListEntry(EntityType.ZOMBIE, 10, 2, 5));
 		this.addSpawn(EntityClassification.CREATURE, new SpawnListEntry(EntityType.BEE, 20, 2, 10));

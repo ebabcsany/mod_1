@@ -1,7 +1,7 @@
 package com.babcsany.minecraft.mod_1.init;
 
 import com.babcsany.minecraft.mod_1.Mod_1;
-import com.babcsany.minecraft.mod_1.world.biome.ExampleBiome;
+import com.babcsany.minecraft.mod_1.world.biome.KnurthBiome;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.Category;
@@ -23,9 +23,9 @@ public class BiomeInit {
 	public static final DeferredRegister<Biome> BIOMES = DeferredRegister.create(ForgeRegistries.BIOMES,
 			Mod_1.MOD_ID);
 	
-	public static final RegistryObject<Biome> EXAMPLE_BIOME = BIOMES
+	public static final RegistryObject<Biome> KNURTH_BIOME = BIOMES
 			.register("example_biome",
-					() -> new ExampleBiome(
+					() -> new KnurthBiome(
 							new Biome.Builder().precipitation(RainType.SNOW).scale(1.2f).temperature(0.5f)
 									.func_235097_a_((new BiomeAmbience.Builder()).setWaterColor(16777215).setWaterFogColor(16777210).setFogColor(1677241).build())
 									.surfaceBuilder(
@@ -40,7 +40,7 @@ public class BiomeInit {
 					));
 
 	public static void registerBiomes() {
-		registerBiomeCool1(EXAMPLE_BIOME.get(), Type.PLAINS, Type.OVERWORLD);
+		registerBiomeCool(KNURTH_BIOME.get(), Type.OVERWORLD, Type.OVERWORLD);
 	}
 
 	private static void registerBiomeCool(Biome biome, Type... types) {
