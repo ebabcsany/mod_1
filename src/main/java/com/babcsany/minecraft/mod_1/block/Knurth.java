@@ -1,4 +1,4 @@
-package com.babcsany.minecraft.mod_1;
+package com.babcsany.minecraft.mod_1.block;
 
 import net.minecraft.block.Block;
 

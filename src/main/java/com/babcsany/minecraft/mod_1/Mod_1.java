@@ -2,6 +2,7 @@ package com.babcsany.minecraft.mod_1;
 
 import com.babcsany.minecraft.mod_1.init.BiomeInit;
 import com.babcsany.minecraft.mod_1.init.BlockInit;
+import com.babcsany.minecraft.mod_1.init.ItemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -43,8 +44,9 @@ public class Mod_1 {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-	BlockInit.BLOCKS.register(modEventBus);
-	BiomeInit.BIOMES.register(modEventBus);
+	    BlockInit.BLOCKS.register(modEventBus);
+	    ItemInit.ITEMS.register(modEventBus);
+	    BiomeInit.BIOMES.register(modEventBus);
     }
 
     private void setup(final FMLCommonSetupEvent event) {

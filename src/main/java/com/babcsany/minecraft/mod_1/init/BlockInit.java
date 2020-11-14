@@ -1,6 +1,6 @@
 package com.babcsany.minecraft.mod_1.init;
 
-import com.babcsany.minecraft.mod_1.Knurth;
+import com.babcsany.minecraft.mod_1.block.Knurth;
 import com.babcsany.minecraft.mod_1.Mod_1;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -16,8 +16,8 @@ public class BlockInit {
 
     public static final RegistryObject<Block> KNURTH = BLOCKS.register("knurth", () -> new Knurth(
             AbstractBlock.Properties.create(Material.ROCK)
-                    .harvestLevel(0)
                     .setRequiresTool()
+                    .harvestLevel(0)
                     .harvestTool(ToolType.PICKAXE)
                     .hardnessAndResistance(1.5F, 6.0F)
     ));
