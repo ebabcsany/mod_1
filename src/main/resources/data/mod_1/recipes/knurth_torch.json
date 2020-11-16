@@ -2,16 +2,12 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "#",
-    "#",
     "C",
     "C"
   ],
   "key": {
     "#": {
       "item": "mod_1:knurth"
-    },
-    "S": {
-      "item": "minecraft:string"
     },
     "C": {
       "item": "ervin_mod_1:sriunk_stick"
