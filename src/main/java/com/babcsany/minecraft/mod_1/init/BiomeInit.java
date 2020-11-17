@@ -24,19 +24,34 @@ public class BiomeInit {
 			Mod_1.MOD_ID);
 	
 	public static final RegistryObject<Biome> KNURTH_BIOME = BIOMES
-			.register("example_biome",
+			.register("knurth_biome",
 					() -> new KnurthBiome(
 							new Biome.Builder().precipitation(RainType.SNOW).scale(1.2f).temperature(0.5f)
-									.func_235097_a_((new BiomeAmbience.Builder()).setWaterColor(16777215).setWaterFogColor(16777210).setFogColor(1677241).build())
+									.func_235097_a_((new BiomeAmbience.Builder()).setWaterColor(0).setWaterFogColor(0).setFogColor(0).build())
 									.surfaceBuilder(
 											new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
-													register("example_surface",
+													register("knurth_surface",
 															new KnurthBiomeSurfaceBuilder(
 																	SurfaceBuilderConfig.field_237203_a_)),
 													new SurfaceBuilderConfig(BlockInit.KNURTH.get().getDefaultState(),
 															BlockInit.KNURTH.get().getDefaultState(),
 															BlockInit.KNURTH.get().getDefaultState())))
 									.category(Category.THEEND).downfall(0.5f).depth(0.12f).parent(null)
+					));
+	public static final RegistryObject<Biome> EXAMPLE_BIOME = BIOMES
+			.register("example_biome",
+					() -> new ExampleBiome(
+							new Biome.Builder().precipitation(RainType.NONE).scale(10.0f).temperature(50.0f)
+									.func_235097_a_((new BiomeAmbience.Builder()).setWaterColor(16777215).setWaterFogColor(16777210).setFogColor(1677241).build())
+									.surfaceBuilder(
+											new ConfiguredSurfaceBuilder<SurfaceBuilderConfig>(
+													register("example_surface",
+															new ExampleBiomeSurfaceBuilder(
+																	SurfaceBuilderConfig.field_237203_a_)),
+													new SurfaceBuilderConfig(Blocks.GRASS_BLOCK.getDefaultState(),
+															Blocks.DIRT.getDefaultState(),
+															BlockInit.KNURTH.get().getDefaultState())))
+									.category(Category.DESERT).downfall(50.0f).depth(120.0f).parent(null)
 					));
 
 	public static void registerBiomes() {

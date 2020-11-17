@@ -2,13 +2,13 @@ package com.babcsany.minecraft.mod_1.init;
 
 import com.babcsany.minecraft.mod_1.block.Knurth;
 import com.babcsany.minecraft.mod_1.Mod_1;
+import com.babcsany.minecraft.mod_1.block.crops.TrurtrStage;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.TorchBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
-import net.minecraft.particles.ParticleType;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
@@ -30,6 +30,14 @@ public class BlockInit {
             AbstractBlock.Properties.create(Material.MISCELLANEOUS, MaterialColor.WOOD)
                     .doesNotBlockMovement()
                     .zeroHardnessAndResistance()
-                    .setLightLevel(Value -> 15)
-                    .sound(SoundType.WOOD), ParticleTypes.FLAME));
+                    .setLightLevel(Value -> 14)
+                    .sound(SoundType.WOOD), ParticleTypes.FLAME)
+    );
+    public static final RegistryObject<Block> TRURTR_STAGE = BLOCKS.register("crops/trurtr_stage", () -> new TrurtrStage(
+            Block.Properties.create(Material.PLANTS)
+                    .zeroHardnessAndResistance()
+                    .doesNotBlockMovement()
+                    .tickRandomly()
+                    .sound(SoundType.CROP)
+    ));
 }

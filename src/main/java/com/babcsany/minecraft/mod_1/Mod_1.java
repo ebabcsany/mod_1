@@ -50,9 +50,9 @@ public class Mod_1 {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+	    BiomeInit.BIOMES.register(modEventBus);
 	    BlockInit.BLOCKS.register(modEventBus);
 	    ItemInit.ITEMS.register(modEventBus);
-	    BiomeInit.BIOMES.register(modEventBus);
     }
 
     private void setup(final FMLCommonSetupEvent event) {

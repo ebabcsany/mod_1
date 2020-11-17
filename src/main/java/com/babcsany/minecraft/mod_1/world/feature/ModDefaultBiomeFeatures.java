@@ -30,6 +30,7 @@ import static net.minecraft.block.Blocks.SOUL_SOIL;
 
 public class ModDefaultBiomeFeatures {
    private static final BlockState GRASS = Blocks.GRASS.getDefaultState();
+   private static final BlockState AIR = Blocks.AIR.getDefaultState();
    private static final BlockState SOUL_FIRE = Blocks.GRASS.getDefaultState();
    private static final BlockState KNURTH = BlockInit.KNURTH.get().getDefaultState();
    private static final BlockState OBSIDIAN = Blocks.OBSIDIAN.getDefaultState();
@@ -116,7 +117,9 @@ public class ModDefaultBiomeFeatures {
    public static final BaseTreeFeatureConfig SPRUCE_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(SPRUCE_LOG), new SimpleBlockStateProvider(SPRUCE_LEAVES), new SpruceFoliagePlacer(2, 1, 0, 2, 1, 1), new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).setIgnoreVines().build();
    public static final BaseTreeFeatureConfig ACACIA_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ACACIA_LOG), new SimpleBlockStateProvider(ACACIA_LEAVES), new AcaciaFoliagePlacer(2, 0, 0, 0), new ForkyTrunkPlacer(5, 2, 2), new TwoLayerFeature(1, 0, 2))).setIgnoreVines().build();
    public static final BaseTreeFeatureConfig BIRCH_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(BIRCH_LOG), new SimpleBlockStateProvider(BIRCH_LEAVES), new BlobFoliagePlacer(2, 0, 0, 0, 3), new StraightTrunkPlacer(5, 2, 0), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build();
+   public static final BaseTreeFeatureConfig KNURTH1_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(KNURTH), new SimpleBlockStateProvider(KNURTH), new BlobFoliagePlacer(2, 4, 6, 3, 3), new StraightTrunkPlacer(5, 4, 0), new TwoLayerFeature(3, 6, 3))).setIgnoreVines().build();
    public static final BaseTreeFeatureConfig BIRCH_TREE_WITH_FEW_BEEHIVES_CONFIG = BIRCH_TREE_CONFIG.func_236685_a_(ImmutableList.of(FEW_BEEHIVES));
+   public static final BaseTreeFeatureConfig KNURTH1_TREE_WITH_BEEHIVES2_CONFIG = KNURTH1_TREE_CONFIG.func_236685_a_(ImmutableList.of(BEEHIVES2));
    public static final BaseTreeFeatureConfig BIRCH_TREE_WITH_BEEHIVES_CONFIG = BIRCH_TREE_CONFIG.func_236685_a_(ImmutableList.of(BEEHIVES));
    public static final BaseTreeFeatureConfig BIRCH_TREE_CONFIG_CLASH = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(BIRCH_LOG), new SimpleBlockStateProvider(BIRCH_LEAVES), new BlobFoliagePlacer(2, 0, 0, 0, 3), new StraightTrunkPlacer(5, 2, 6), new TwoLayerFeature(1, 0, 1))).setIgnoreVines().func_236703_a_(ImmutableList.of(FEW_BEEHIVES)).build();
    public static final BaseTreeFeatureConfig SWAMP_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(OAK_LOG), new SimpleBlockStateProvider(OAK_LEAVES), new BlobFoliagePlacer(3, 0, 0, 0, 3), new StraightTrunkPlacer(5, 3, 0), new TwoLayerFeature(1, 0, 1))).func_236701_a_(1).func_236703_a_(ImmutableList.of(LeaveVineTreeDecorator.field_236871_b_)).build();
@@ -135,6 +138,7 @@ public class ModDefaultBiomeFeatures {
    public static final BaseTreeFeatureConfig MEGA_PINE_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(SPRUCE_LOG), new SimpleBlockStateProvider(SPRUCE_LEAVES), new MegaPineFoliagePlacer(0, 0, 0, 0, 4, 3), new GiantTrunkPlacer(13, 2, 14), new TwoLayerFeature(1, 1, 2))).func_236703_a_(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(PODZOL)))).build();
    public static final BaseTreeFeatureConfig MEGA_JUNGLE_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(JUNGLE_LOG), new SimpleBlockStateProvider(JUNGLE_LEAVES), new JungleFoliagePlacer(2, 0, 0, 0, 2), new MegaJungleTrunkPlacer(10, 2, 19), new TwoLayerFeature(1, 1, 2))).func_236703_a_(ImmutableList.of(TrunkVineTreeDecorator.field_236879_b_, LeaveVineTreeDecorator.field_236871_b_)).build();
    public static final BlockClusterFeatureConfig GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(GRASS), new SimpleBlockPlacer())).tries(32).build();
+   public static final BlockClusterFeatureConfig OBSIDIAN_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(OBSIDIAN), new SimpleBlockPlacer())).tries(64).func_235189_a_().build();
    public static final BlockClusterFeatureConfig TAIGA_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder((new WeightedBlockStateProvider()).addWeightedBlockstate(GRASS, 1).addWeightedBlockstate(FERN, 4), SimpleBlockPlacer.field_236447_c_)).tries(32).build();
    public static final BlockClusterFeatureConfig LUSH_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder((new WeightedBlockStateProvider()).addWeightedBlockstate(GRASS, 3).addWeightedBlockstate(FERN, 1), SimpleBlockPlacer.field_236447_c_)).blacklist(ImmutableSet.of(PODZOL)).tries(32).build();
    public static final BlockClusterFeatureConfig LILY_OF_THE_VALLEY_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(LILY_OF_THE_VALLEY), SimpleBlockPlacer.field_236447_c_)).tries(64).build();
@@ -243,6 +247,14 @@ public class ModDefaultBiomeFeatures {
       biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, KNURTH, 400)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(100, 0, 0, 2000))));
    }
 
+   public static void addKnurth1(Biome biomeIn) {
+      biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, KNURTH, 50)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 200))));
+   }
+
+   public static void addAir(Biome biomeIn) {
+      biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, AIR, 400)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(100, 0, 0, 2000))));
+   }
+
    public static void addOres(Biome biomeIn) {
       biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, COAL_ORE, 17)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 0, 0, 128))));
       biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, IRON_ORE, 9)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(20, 0, 0, 64))));
@@ -313,6 +325,10 @@ public class ModDefaultBiomeFeatures {
 
    public static void addBirchTrees(Biome biomeIn) {
       biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_236291_c_.withConfiguration(BIRCH_TREE_WITH_FEW_BEEHIVES_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(10, 0.1F, 1))));
+   }
+
+   public static void addKnurth1Trees(Biome biomeIn) {
+      biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.field_236291_c_.withConfiguration(KNURTH1_TREE_WITH_BEEHIVES2_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(100, 1.0F, 10))));
    }
 
    public static void addForestTrees(Biome biomeIn) {
