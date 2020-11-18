@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "mod_1:block/trurtr_crops_block"
+      "model": "mod_1:block/crops/trurtr/trurtr_crops_block"
     }
   }
 }
