@@ -13,7 +13,7 @@ public class ItemInit {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Mod_1.MOD_ID);
 
-    public static final RegistryObject<Item> TRURTR = ITEMS.register("trurtr", () -> new Item(
+    public static final RegistryObject<Item> TRURTR = ITEMS.register("crops/trurtr", () -> new Item(
             (new Item.Properties()).food(FoodInit.TRURTR)
     ));
     public static final RegistryObject<Item> TRURTR_SEEDS = ITEMS.register("seeds/trurtr_seeds", () -> new BlockNamedItem(
