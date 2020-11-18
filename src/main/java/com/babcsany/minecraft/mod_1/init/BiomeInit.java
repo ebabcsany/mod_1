@@ -1,7 +1,9 @@
 package com.babcsany.minecraft.mod_1.init;
 
 import com.babcsany.minecraft.mod_1.Mod_1;
+import com.babcsany.minecraft.mod_1.world.biome.ExampleBiome;
 import com.babcsany.minecraft.mod_1.world.biome.KnurthBiome;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biome.Category;
