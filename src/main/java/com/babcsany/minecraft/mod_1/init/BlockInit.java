@@ -2,8 +2,8 @@ package com.babcsany.minecraft.mod_1.init;
 
 import com.babcsany.minecraft.mod_1.block.Knurth;
 import com.babcsany.minecraft.mod_1.Mod_1;
-import com.babcsany.minecraft.mod_1.block.crops.TrurtrStage;
 import com.babcsany.minecraft.mod_1.block.crops.trurtr.TrurtrCropsBlock;
+import com.babcsany.minecraft.mod_1.block.crops.trurtr.trurtr_stage.TrurtrStage;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
