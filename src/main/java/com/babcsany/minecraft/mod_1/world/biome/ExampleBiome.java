@@ -13,6 +13,7 @@ public class ExampleBiome extends Biome {
 		this.addSpawn(EntityClassification.CREATURE, new SpawnListEntry(EntityType.BEE, 20, 2, 10));
 		DefaultBiomeFeatures.func_235197_c_(this);
 		ModDefaultBiomeFeatures.addKnurth1(this);
+		ModDefaultBiomeFeatures.addGrass(this);
 		ModDefaultBiomeFeatures.addKnurth1Trees(this);
 	}
 	

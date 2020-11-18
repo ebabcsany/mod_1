@@ -30,6 +30,7 @@ import static net.minecraft.block.Blocks.SOUL_SOIL;
 
 public class ModDefaultBiomeFeatures {
    private static final BlockState GRASS = Blocks.GRASS.getDefaultState();
+   private static final BlockState TRURTR_CROPS_BLOCK = BlockInit.TRURTR_CROPS_BLOCK.get().getDefaultState();
    private static final BlockState AIR = Blocks.AIR.getDefaultState();
    private static final BlockState SOUL_FIRE = Blocks.GRASS.getDefaultState();
    private static final BlockState KNURTH = BlockInit.KNURTH.get().getDefaultState();
@@ -138,7 +139,8 @@ public class ModDefaultBiomeFeatures {
    public static final BaseTreeFeatureConfig MEGA_PINE_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(SPRUCE_LOG), new SimpleBlockStateProvider(SPRUCE_LEAVES), new MegaPineFoliagePlacer(0, 0, 0, 0, 4, 3), new GiantTrunkPlacer(13, 2, 14), new TwoLayerFeature(1, 1, 2))).func_236703_a_(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(PODZOL)))).build();
    public static final BaseTreeFeatureConfig MEGA_JUNGLE_TREE_CONFIG = (new BaseTreeFeatureConfig.Builder(new SimpleBlockStateProvider(JUNGLE_LOG), new SimpleBlockStateProvider(JUNGLE_LEAVES), new JungleFoliagePlacer(2, 0, 0, 0, 2), new MegaJungleTrunkPlacer(10, 2, 19), new TwoLayerFeature(1, 1, 2))).func_236703_a_(ImmutableList.of(TrunkVineTreeDecorator.field_236879_b_, LeaveVineTreeDecorator.field_236871_b_)).build();
    public static final BlockClusterFeatureConfig GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(GRASS), new SimpleBlockPlacer())).tries(32).build();
-   public static final BlockClusterFeatureConfig OBSIDIAN_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(OBSIDIAN), new SimpleBlockPlacer())).tries(64).func_235189_a_().build();
+   public static final BlockClusterFeatureConfig TRURTR_CROPS_BLOCK_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(TRURTR_CROPS_BLOCK), new SimpleBlockPlacer())).tries(32).build();
+   public static final BlockClusterFeatureConfig OBSIDIAN_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(OBSIDIAN), new SimpleBlockPlacer())).tries(64).func_227317_b_().build();
    public static final BlockClusterFeatureConfig TAIGA_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder((new WeightedBlockStateProvider()).addWeightedBlockstate(GRASS, 1).addWeightedBlockstate(FERN, 4), SimpleBlockPlacer.field_236447_c_)).tries(32).build();
    public static final BlockClusterFeatureConfig LUSH_GRASS_CONFIG = (new BlockClusterFeatureConfig.Builder((new WeightedBlockStateProvider()).addWeightedBlockstate(GRASS, 3).addWeightedBlockstate(FERN, 1), SimpleBlockPlacer.field_236447_c_)).blacklist(ImmutableSet.of(PODZOL)).tries(32).build();
    public static final BlockClusterFeatureConfig LILY_OF_THE_VALLEY_CONFIG = (new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(LILY_OF_THE_VALLEY), SimpleBlockPlacer.field_236447_c_)).tries(64).build();
@@ -406,6 +408,18 @@ public class ModDefaultBiomeFeatures {
 
    public static void addGrass(Biome biomeIn) {
       biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(GRASS_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(2))));
+   }
+
+   public static void addTrurtrCropsBlock(Biome biomeIn) {
+      biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(TRURTR_CROPS_BLOCK_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(2))));
+   }
+
+   public static void addTrurtrCropsBlock1(Biome biomeIn) {
+      biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(TRURTR_CROPS_BLOCK_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(5))));
+   }
+
+   public static void addTrurtrCropsBlock2(Biome biomeIn) {
+      biomeIn.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(TRURTR_CROPS_BLOCK_CONFIG).withPlacement(Placement.COUNT_HEIGHTMAP_DOUBLE.configure(new FrequencyConfig(20))));
    }
 
    public static void addSwampVegetation(Biome biomeIn) {

@@ -14,7 +14,7 @@
                   "condition": "minecraft:block_state_property",
                   "block": "mod_1:crops/trurtr_stage",
                   "properties": {
-                    "age": "43"
+                    "age": "512"
                   }
                 }
               ],
@@ -39,8 +39,8 @@
               "enchantment": "minecraft:fortune",
               "formula": "minecraft:binomial_with_bonus_count",
               "parameters": {
-                "extra": 32,
-                "probability": 0.43
+                "extra": 512,
+                "probability": 0.0512
               }
             }
           ],
@@ -52,7 +52,7 @@
           "condition": "minecraft:block_state_property",
           "block": "ervin_mod_1:crops/trurtr_stage",
           "properties": {
-            "age": "43"
+            "age": "512"
           }
         }
       ]

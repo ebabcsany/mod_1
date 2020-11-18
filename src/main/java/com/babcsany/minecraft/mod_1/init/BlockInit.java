@@ -40,4 +40,11 @@ public class BlockInit {
                     .tickRandomly()
                     .sound(SoundType.CROP)
     ));
+    public static final RegistryObject<Block> TRURTR_CROPS_BLOCK = BLOCKS.register("crops/trurtr_crops_block", () -> new TrurtrStage(
+            Block.Properties.create(Material.PLANTS)
+                    .zeroHardnessAndResistance()
+                    .doesNotBlockMovement()
+                    .tickRandomly()
+                    .sound(SoundType.CROP)
+    ));
 }
