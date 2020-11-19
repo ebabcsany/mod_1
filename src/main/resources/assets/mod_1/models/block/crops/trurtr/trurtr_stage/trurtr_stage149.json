@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "mod_1:block/crops/trurtr/trurtr_stage/trurtr_stage149"
+  }
+}
