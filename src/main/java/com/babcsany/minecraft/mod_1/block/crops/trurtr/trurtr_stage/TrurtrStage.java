@@ -654,12 +654,12 @@ public class TrurtrStage extends BushBlock implements IGrowable {
       super.onEntityCollision(state, worldIn, pos, entityIn);
    }
 
-   protected IItemProvider getSeedsItem() {
+   protected IItemProvider getTrurtrSeedsItem() {
       return BlockInit.TRURTR_STAGE.get();
    }
 
    public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
-      return new ItemStack(this.getSeedsItem());
+      return new ItemStack(this.getTrurtrSeedsItem());
    }
 
    /**

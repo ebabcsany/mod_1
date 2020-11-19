@@ -113,6 +113,12 @@ public class Mod_1 {
                     registry.register(blockItem);
                 }
             });
+            ItemInit.ITEMS.getEntries().stream().map(RegistryObject::get).forEach(item -> {
+                {
+                    final Item.Properties properties = new Item.Properties();
+                    properties.group(ItemGroup.MATERIALS);
+                }
+            });
         }
     }
 }
