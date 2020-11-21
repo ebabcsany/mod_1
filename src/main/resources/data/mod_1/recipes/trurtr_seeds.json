@@ -3,11 +3,11 @@
   "group": "seeds",
   "ingredients": [
     {
-      "item": "mod_1:trurtr"
+      "item": "mod_1:crops/trurtr"
     }
   ],
   "result": {
-    "item": "mod_1:trurtr_seeds",
+    "item": "mod_1:seeds/trurtr_seeds",
     "count": 32
   }
 }
