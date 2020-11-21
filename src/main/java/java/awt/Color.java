@@ -202,6 +202,12 @@ public class Color implements Paint, java.io.Serializable {
      */
     public final static Color BLUE = blue;
 
+    public final static Color is20C08040      = new Color(192, 128, 64, 32);
+    public final static Color is782878A0      = new Color(40, 120, 160, 120);
+    public final static Color isA04080FF      = new Color(64, 128, 255, 160);
+    public final static Color is40FF40FF      = new Color(255, 64, 255, 64);
+    public final static Color isFF807860      = new Color(128, 120, 96, 255);
+
     /**
      * The color value.
      * @serial
@@ -317,26 +323,26 @@ public class Color implements Paint, java.io.Serializable {
      * validity.
      * Throws an <code>IllegalArgumentException</code> if the value is out
      * of range.
-     * @param r the Red component
-     * @param g the Green component
-     * @param b the Blue component
+     * @param red the Red component
+     * @param green the Green component
+     * @param blue the Blue component
      **/
-    private static void testColorValueRange(float r, float g, float b, float a) {
+    private static void testColorValueRange(float red, float green, float blue, float alpha) {
         boolean rangeError = false;
         String badComponentString = "";
-        if ( a < 0.0 || a > 1.0) {
+        if ( alpha < 0.0 || alpha > 1.0) {
             rangeError = true;
             badComponentString = badComponentString + " Alpha";
         }
-        if ( r < 0.0 || r > 1.0) {
+        if ( red < 0.0 || red > 1.0) {
             rangeError = true;
             badComponentString = badComponentString + " Red";
         }
-        if ( g < 0.0 || g > 1.0) {
+        if ( green < 0.0 || green > 1.0) {
             rangeError = true;
             badComponentString = badComponentString + " Green";
         }
-        if ( b < 0.0 || b > 1.0) {
+        if ( blue < 0.0 || blue > 1.0) {
             rangeError = true;
             badComponentString = badComponentString + " Blue";
         }
@@ -376,10 +382,10 @@ public class Color implements Paint, java.io.Serializable {
      * @throws IllegalArgumentException if <code>r</code>, <code>g</code>,
      *        <code>b</code> or <code>a</code> are outside of the range
      *        0 to 255, inclusive
-     * @param r the red component
-     * @param g the green component
-     * @param b the blue component
-     * @param a the alpha component
+     * @param red the red component
+     * @param green the green component
+     * @param blue the blue component
+     * @param alpha the alpha component
      * @see #getRed
      * @see #getGreen
      * @see #getBlue
@@ -387,12 +393,12 @@ public class Color implements Paint, java.io.Serializable {
      * @see #getRGB
      */
     @ConstructorProperties({"red", "green", "blue", "alpha"})
-    public Color(int r, int g, int b, int a) {
-        value = ((a & 0xFF) << 24) |
-                ((r & 0xFF) << 16) |
-                ((g & 0xFF) << 8)  |
-                ((b & 0xFF) << 0);
-        testColorValueRange(r,g,b,a);
+    public Color(int red, int green, int blue, int alpha) {
+        value = ((alpha & 0xFF) << 24) |
+                ((red & 0xFF) << 16) |
+                ((green & 0xFF) << 8)  |
+                ((blue & 0xFF) << 0);
+        testColorValueRange(red,green,blue,alpha);
     }
 
     /**
