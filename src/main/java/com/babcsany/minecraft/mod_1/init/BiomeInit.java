@@ -57,7 +57,8 @@ public class BiomeInit {
 					));
 
 	public static void registerBiomes() {
-		registerBiomeCool(KNURTH_BIOME.get(), Type.OVERWORLD, Type.OVERWORLD);
+		registerBiomeCool(KNURTH_BIOME.get(), Type.END, Type.OVERWORLD);
+		registerBiomeCool(EXAMPLE_BIOME.get(), Type.OVERWORLD, Type.OVERWORLD);
 	}
 
 	private static void registerBiomeCool(Biome biome, Type... types) {

@@ -2,5 +2,6 @@
   "biome.mod_1.knurth_biome": "Knurth Biome",
   "block.mod_1.knurth": "Knurth",
   "block.mod_1.knurth_torch": "Knurth Torch",
-  "block.mod_1.trurtr_stage": "Trurtr Stage"
+  "block.mod_1.crops.trurtr.trurtr_stage": "Trurtr Stage",
+  "item.mod_1.trurtr.trurtr_": "Trurtr"
 }

@@ -250,7 +250,7 @@ public class ModDefaultBiomeFeatures {
    }
 
    public static void addKnurth1(Biome biomeIn) {
-      biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, KNURTH, 50)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 200))));
+      biomeIn.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE, KNURTH, 40)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 0, 0, 200))));
    }
 
    public static void addAir(Biome biomeIn) {
