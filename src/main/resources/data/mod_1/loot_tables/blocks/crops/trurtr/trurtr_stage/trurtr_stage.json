@@ -50,7 +50,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "mod_1:crops/trurtr_stage",
+          "block": "mod_1:crops/trurtr/trurtr_stage",
           "properties": {
             "age": "512"
           }
