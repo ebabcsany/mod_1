@@ -34,7 +34,7 @@ public class BlockInit {
                     .setLightLevel(Value -> 14)
                     .sound(SoundType.WOOD), ParticleTypes.FLAME)
     );
-    public static final RegistryObject<Block> TRURTR_STAGE = BLOCKS.register("crops/trurtr/trurtr_stagr", () -> new TrurtrStage(
+    public static final RegistryObject<Block> TRURTR_STAGE = BLOCKS.register("crops/trurtr/trurtr_stage", () -> new TrurtrStage(
             Block.Properties.create(Material.PLANTS)
                     .zeroHardnessAndResistance()
                     .doesNotBlockMovement()
