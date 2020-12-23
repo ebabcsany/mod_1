@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "**",
+    "&&",
+    "##"
+  ],
+  "key": {
+    "*": {
+      "item": "mod_1:drururn"
+    },
+    "&": {
+      "item": "mod_1:drurn_stage"
+    },
+    "#": {
+      "item": "mod_1:drurn"
+    }
+  },
+  "result": {
+    "item": "mod_1:drurn_stage0",
+    "count": 1
+  }
+}

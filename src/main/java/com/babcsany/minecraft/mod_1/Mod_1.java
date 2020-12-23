@@ -1,10 +1,10 @@
 package com.babcsany.minecraft.mod_1;
 
-import com.babcsany.minecraft.mod_1.init.BiomeInit;
-import com.babcsany.minecraft.mod_1.init.BlockInit;
-import com.babcsany.minecraft.mod_1.init.ItemInit;
+import com.babcsany.minecraft.mod_1.entity.animal.SrechEntity;
+import com.babcsany.minecraft.mod_1.init.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -13,6 +13,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
@@ -53,12 +54,16 @@ public class Mod_1 {
 	    BiomeInit.BIOMES.register(modEventBus);
 	    BlockInit.BLOCKS.register(modEventBus);
 	    ItemInit.ITEMS.register(modEventBus);
+	    //ParticleInit.PARTICLE_TYPES.register(modEventBus);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        /*DeferredWorkQueue.runLater(() -> {
+            GlobalEntityTypeAttributes.put(EntityInit.SRECH_ENTITY.get(), SrechEntity.gsetCustomAttributes().create());
+        });*/
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

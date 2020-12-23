@@ -9,7 +9,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "mod_1:trurtr_seeds"
+          "name": "mod_1:seeds/trurtr_seeds"
         }
       ],
       "conditions": [

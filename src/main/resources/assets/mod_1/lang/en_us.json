@@ -1,7 +1,25 @@
 {
+  "biome.mod_1.example_biome": "Example Biome",
   "biome.mod_1.knurth_biome": "Knurth Biome",
+  "block.mod_1.gruvtrers": "Gruvtrers",
   "block.mod_1.knurth": "Knurth",
   "block.mod_1.knurth_torch": "Knurth Torch",
+  "block.mod_1.crops.trurtr.trurtr_crops_block": "Trurtr Crops Block",
   "block.mod_1.crops.trurtr.trurtr_stage": "Trurtr Stage",
-  "item.mod_1.trurtr.trurtr_": "Trurtr"
+  "block.mod_1.crops.trurtr.trurtr_stagr": "Trurtr Stagr",
+  "item.mod_1.drurn": "Drurn",
+  "item.mod_1.drurn_stage": "Drurn Stage",
+  "item.mod_1.drurn_stage0": "Drurn Stage0",
+  "item.mod_1.drurn_stage1": "Drurn Stage1",
+  "item.mod_1.drurn_stage2": "Drurn Stage2",
+  "item.mod_1.drurn_stage3": "Drurn Stage3",
+  "item.mod_1.drurn_stage4": "Drurn Stage4",
+  "item.mod_1.drurn_stage5": "Drurn Stage5",
+  "item.mod_1.drurn_stage6": "Drurn Stage6",
+  "item.mod_1.drurn_stage7": "Drurn Stage7",
+  "item.mod_1.drurn_stage8": "Drurn Stage8",
+  "item.mod_1.drururn": "Drururn",
+  "item.mod_1.kruth": "Kruth",
+  "item.mod_1.crops.trurtr": "Trurtr",
+  "item.mod_1.seeds.trurtr_seeds": "Trurtr Seeds"
 }

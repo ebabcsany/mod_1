@@ -22,7 +22,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class TrurtrStageBlock extends BushBlock implements IGrowable {
+public class TrurtrBlockStage extends BushBlock implements IGrowable {
    public static final IntegerProperty AGE = ModBlockStateProperties.AGE_0_512;
    private static final VoxelShape[] SHAPE_BY_AGE = new VoxelShape[]{
            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 0.03125D, 16.0D),
@@ -540,7 +540,7 @@ public class TrurtrStageBlock extends BushBlock implements IGrowable {
            Block.makeCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D)
    };
 
-   public TrurtrStageBlock(Properties builder) {
+   public TrurtrBlockStage(Properties builder) {
       super(builder);
       this.setDefaultState(this.stateContainer.getBaseState().with(this.getAgeProperty(), Integer.valueOf(0)));
    }
@@ -558,7 +558,7 @@ public class TrurtrStageBlock extends BushBlock implements IGrowable {
    }
 
    public int getMaxAge() {
-      return 7;
+      return 512;
    }
 
    protected int getAge(BlockState state) {
@@ -667,7 +667,7 @@ public class TrurtrStageBlock extends BushBlock implements IGrowable {
    }
 
    protected IItemProvider getTrurtrSeedsItem() {
-      return ItemInit.TRURTR_SEEDS.get();
+      return ItemInit.KNURTH_PICKAXE.get();
    }
 
    public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {

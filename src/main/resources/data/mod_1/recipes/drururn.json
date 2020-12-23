@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "####",
+    "####",
+    "####"
+  ],
+  "key": {
+    "#": {
+      "item": "ervin_mod_1:volmint"
+    }
+  },
+  "result": {
+    "item": "mod_1:drururn",
+    "count": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "mod_1:block/crops/trurtr/trurtr_block_stage/trurtr_block_stage8",
+    "down": "mod_1:block/crops/trurtr/trurtr_block_stage/trurtr_block_stage8",
+    "north": "mod_1:block/crops/trurtr/trurtr_stage/trurtr_stage8",
+    "east": "mod_1:block/crops/trurtr/trurtr_stage/trurtr_stage8",
+    "west": "mod_1:block/crops/trurtr/trurtr_stage/trurtr_stage8",
+    "south": "mod_1:block/crops/trurtr/trurtr_stage/trurtr_stage8",
+    "particle": "mod_1:block/crops/trurtr/trurtr_block_stage/trurtr_block_stage8"
+  }
+}
