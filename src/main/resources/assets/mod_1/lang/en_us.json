@@ -21,5 +21,14 @@
   "item.mod_1.drururn": "Drururn",
   "item.mod_1.kruth": "Kruth",
   "item.mod_1.crops.trurtr": "Trurtr",
-  "item.mod_1.seeds.trurtr_seeds": "Trurtr Seeds"
+  "item.mod_1.seeds.trurtr_seeds": "Trurtr Seeds",
+  "item.mod_1.drurn_stage.drurn_stage0": "Drurn Stage/Drurn Stage0",
+  "item.mod_1.drurn_stage.drurn_stage1": "Drurn Stage/Drurn Stage1",
+  "item.mod_1.drurn_stage.drurn_stage2": "Drurn Stage/Drurn Stage2",
+  "item.mod_1.drurn_stage.drurn_stage3": "Drurn Stage/Drurn Stage3",
+  "item.mod_1.drurn_stage.drurn_stage4": "Drurn Stage/Drurn Stage4",
+  "item.mod_1.drurn_stage.drurn_stage5": "Drurn Stage/Drurn Stage5",
+  "item.mod_1.drurn_stage.drurn_stage6": "Drurn Stage/Drurn Stage6",
+  "item.mod_1.drurn_stage.drurn_stage7": "Drurn Stage/Drurn Stage7",
+  "item.mod_1.drurn_stage.drurn_stage8": "Drurn Stage/Drurn Stage8"
 }

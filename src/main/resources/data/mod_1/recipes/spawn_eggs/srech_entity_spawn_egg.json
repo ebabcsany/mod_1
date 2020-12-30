@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "&&&",
+    "&#&",
+    "&&&"
+  ],
+  "key": {
+    "#": {
+      "item": "mod_1:spawn_eggs/spawn_egg_1"
+    },
+    "&": {
+      "item": "mod_1:drurn_stages"
+    }
+  },
+  "result": {
+    "item": "mod_1:spawn_eggs/srech_entity_spawn_egg",
+    "count": 1
+  }
+}

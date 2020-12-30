@@ -11,7 +11,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class SrechRender extends MobRenderer<SrechEntity, SrechModel<SrechEntity>> {
-   private static final ResourceLocation SRECH_TEXTURES = new ResourceLocation(Mod_1.MOD_ID,"textures/entity/srach/srech.png");
+   private static final ResourceLocation SRECH_TEXTURES = new ResourceLocation(Mod_1.MOD_ID,"textures/entity/srech.png");
 
    public SrechRender(EntityRendererManager renderManagerIn) {
       super(renderManagerIn, new SrechModel<>(), 0.7F);
@@ -20,7 +20,6 @@ public class SrechRender extends MobRenderer<SrechEntity, SrechModel<SrechEntity
    /**
     * Returns the location of an entity's texture.
     */
-   @Override
    public ResourceLocation getEntityTexture(SrechEntity entity) {
       return SRECH_TEXTURES;
    }

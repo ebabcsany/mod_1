@@ -6,7 +6,7 @@ public enum SrechEntityActionResultType {
    PASS,
    FAIL;
 
-   public boolean isSuccessOrConsume() {
+   public boolean isSrechEntitySuccessOrConsume() {
       return this == SUCCESS || this == CONSUME;
    }
 

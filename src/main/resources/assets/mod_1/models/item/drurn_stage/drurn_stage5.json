@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mod_1:item/drurn_stage/drurn_stage5"
+  }
+}

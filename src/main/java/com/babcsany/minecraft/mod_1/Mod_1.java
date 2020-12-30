@@ -53,6 +53,7 @@ public class Mod_1 {
 
 	    BiomeInit.BIOMES.register(modEventBus);
 	    BlockInit.BLOCKS.register(modEventBus);
+	    EntityInit.ENTITY_TYPES.register(modEventBus);
 	    ItemInit.ITEMS.register(modEventBus);
 	    //ParticleInit.PARTICLE_TYPES.register(modEventBus);
     }
@@ -61,9 +62,9 @@ public class Mod_1 {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
-        /*DeferredWorkQueue.runLater(() -> {
-            GlobalEntityTypeAttributes.put(EntityInit.SRECH_ENTITY.get(), SrechEntity.gsetCustomAttributes().create());
-        });*/
+        DeferredWorkQueue.runLater(() -> {
+            GlobalEntityTypeAttributes.put(EntityInit.SRECH_ENTITY.get(), SrechEntity.setCustomAttributes().create());
+        });
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

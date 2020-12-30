@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    " C ",
+    " C "
+  ],
+  "key": {
+    "#": {
+      "item": "mod_1:knurth"
+    },
+    "C": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "mod_1:knurth_pickaxe",
+    "count": 1
+  }
+}

@@ -36,6 +36,10 @@ public class DrurnStage7Item extends Item {
          entityLiving.clearActivePotions();
       }
 
+      if (entityLiving instanceof PlayerEntity) {
+         stack.shrink(1);
+      }
+
       return stack.isEmpty() ? new ItemStack(ItemInit.DRURN_STAGE6.get()) : stack;
    }
 

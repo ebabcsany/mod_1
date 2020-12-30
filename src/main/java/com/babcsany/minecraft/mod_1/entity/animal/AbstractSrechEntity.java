@@ -1,7 +1,8 @@
-package net.minecraft.entity.passive;
+package com.babcsany.minecraft.mod_1.entity.animal;
 
-import com.babcsany.minecraft.mod_1.entity.SrechEntityActionResultType;
-import net.minecraft.advancements.CriteriaTriggers;
+import com.babcsany.minecraft.mod_1.entity.ModCriteriaTriggers;
+import com.babcsany.minecraft.mod_1.init.ItemInit;
+import com.babcsany.minecraft.mod_1.stats.Stats1;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
@@ -14,7 +15,6 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.pathfinding.PathNodeType;
-import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
@@ -30,11 +30,11 @@ import javax.annotation.Nullable;
 import java.util.Random;
 import java.util.UUID;
 
-public abstract class AnimalEntity extends AgeableEntity {
+public abstract class AbstractSrechEntity extends AgeableEntity {
    private int inLove;
    private UUID playerInLove;
 
-   protected AnimalEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
+   protected AbstractSrechEntity(EntityType<? extends AbstractSrechEntity> type, World worldIn) {
       super(type, worldIn);
       this.setPathPriority(PathNodeType.DANGER_FIRE, 16.0F);
       this.setPathPriority(PathNodeType.DAMAGE_FIRE, -1.0F);
@@ -113,10 +113,10 @@ public abstract class AnimalEntity extends AgeableEntity {
 
    /**
     * Static predicate for determining whether or not an animal can spawn at the provided location.
-    *  
+    *
     * @param animal The animal entity to be spawned
     */
-   public static boolean canAnimalSpawn(EntityType<? extends AnimalEntity> animal, IWorld worldIn, SpawnReason reason, BlockPos pos, Random random) {
+   public static boolean canAnimalSpawn(EntityType<? extends AbstractSrechEntity> animal, IWorld worldIn, SpawnReason reason, BlockPos pos, Random random) {
       return worldIn.getBlockState(pos.down()).isIn(Blocks.GRASS_BLOCK) && worldIn.getLightSubtracted(pos, 0) > 8;
    }
 
@@ -143,7 +143,7 @@ public abstract class AnimalEntity extends AgeableEntity {
     * the animal type)
     */
    public boolean isBreedingItem(ItemStack stack) {
-      return stack.getItem() == Items.WHEAT;
+      return stack.getItem() == ItemInit.DRURURN.get();
    }
 
    public ActionResultType func_230254_b_(PlayerEntity p_230254_1_, Hand p_230254_2_) {
@@ -168,30 +168,6 @@ public abstract class AnimalEntity extends AgeableEntity {
       }
 
       return super.func_230254_b_(p_230254_1_, p_230254_2_);
-   }
-
-   public SrechEntityActionResultType drurn_action(PlayerEntity p_230254_1_, Hand p_230254_2_) {
-      ItemStack itemstack = p_230254_1_.getHeldItem(p_230254_2_);
-      if (this.isBreedingItem(itemstack)) {
-         int i = this.getGrowingAge();
-         if (!this.world.isRemote && i == 0 && this.canBreed()) {
-            this.consumeItemFromStack(p_230254_1_, itemstack);
-            this.setInLove(p_230254_1_);
-            return SrechEntityActionResultType.SUCCESS;
-         }
-
-         if (this.isChild()) {
-            this.consumeItemFromStack(p_230254_1_, itemstack);
-            this.ageUp((int)((float)(-i / 20) * 0.1F), true);
-            return SrechEntityActionResultType.drurn_action(this.world.isRemote);
-         }
-
-         if (this.world.isRemote) {
-            return SrechEntityActionResultType.CONSUME;
-         }
-      }
-
-      return super.drurn_action(p_230254_1_, p_230254_2_);
    }
 
    /**
@@ -249,7 +225,7 @@ public abstract class AnimalEntity extends AgeableEntity {
    /**
     * Returns true if the mob is currently able to mate with the specified mob.
     */
-   public boolean canMateWith(AnimalEntity otherAnimal) {
+   public boolean canMateWith(AbstractSrechEntity otherAnimal) {
       if (otherAnimal == this) {
          return false;
       } else if (otherAnimal.getClass() != this.getClass()) {
@@ -259,19 +235,19 @@ public abstract class AnimalEntity extends AgeableEntity {
       }
    }
 
-   public void func_234177_a_(World p_234177_1_, AnimalEntity p_234177_2_) {
+   public void func_234177_a_(World p_234177_1_, AbstractSrechEntity p_234177_2_) {
       AgeableEntity ageableentity = this.createChild(p_234177_2_);
-       final net.minecraftforge.event.entity.living.BabyEntitySpawnEvent event = new net.minecraftforge.event.entity.living.BabyEntitySpawnEvent(this, p_234177_2_, ageableentity);
-       final boolean cancelled = net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event);
-       ageableentity = event.getChild();
-       if (cancelled) {
-           //Reset the "inLove" state for the animals
-           this.setGrowingAge(6000);
-           p_234177_2_.setGrowingAge(6000);
-           this.resetInLove();
-           p_234177_2_.resetInLove();
-           return;
-       }
+      final net.minecraftforge.event.entity.living.BabyEntitySpawnEvent event = new net.minecraftforge.event.entity.living.BabyEntitySpawnEvent(this, p_234177_2_, ageableentity);
+      final boolean cancelled = net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event);
+      ageableentity = event.getChild();
+      if (cancelled) {
+         //Reset the "inLove" state for the animals
+         this.setGrowingAge(6000);
+         p_234177_2_.setGrowingAge(6000);
+         this.resetInLove();
+         p_234177_2_.resetInLove();
+         return;
+      }
       if (ageableentity != null) {
          ServerPlayerEntity serverplayerentity = this.getLoveCause();
          if (serverplayerentity == null && p_234177_2_.getLoveCause() != null) {
@@ -279,8 +255,8 @@ public abstract class AnimalEntity extends AgeableEntity {
          }
 
          if (serverplayerentity != null) {
-            serverplayerentity.addStat(Stats.ANIMALS_BRED);
-            CriteriaTriggers.BRED_ANIMALS.trigger(serverplayerentity, this, p_234177_2_, ageableentity);
+            serverplayerentity.addStat(Stats1.ANIMALS1_BRED);
+            ModCriteriaTriggers.BRED_SRECH_ENTITY_TRIGGER.trigger(serverplayerentity, this, p_234177_2_, ageableentity);
          }
 
          this.setGrowingAge(6000);

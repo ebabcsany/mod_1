@@ -65,4 +65,34 @@ public class ItemInit {
     public static final RegistryObject<Item> SRECH_ENTITY_SPAWN_EGG = ITEMS.register("spawn_eggs/srech_entity_spawn_egg", () -> new ModSpawnEggItem(
             EntityInit.SRECH_ENTITY, 0x604080, 0x706030, new Item.Properties()
     ));
+    public static final RegistryObject<Item> SPAWN_EGG_1 = ITEMS.register("spawn_eggs/spawn_egg_1", () -> new Item(
+            (new Item.Properties())
+    ));
+    public static final RegistryObject<Item> DRURN_STAGE_DRURN_STAGE0 = ITEMS.register("drurn_stage/drurn_stage0", () -> new Item(
+            (new Item.Properties())
+    ));
+    public static final RegistryObject<Item> DRURN_STAGE_DRURN_STAGE1 = ITEMS.register("drurn_stage/drurn_stage1", () -> new Item(
+            (new Item.Properties())
+    ));
+    public static final RegistryObject<Item> DRURN_STAGE_DRURN_STAGE2 = ITEMS.register("drurn_stage/drurn_stage2", () -> new Item(
+            (new Item.Properties())
+    ));
+    public static final RegistryObject<Item> DRURN_STAGE_DRURN_STAGE3 = ITEMS.register("drurn_stage/drurn_stage3", () -> new Item(
+            (new Item.Properties())
+    ));
+    public static final RegistryObject<Item> DRURN_STAGE_DRURN_STAGE4 = ITEMS.register("drurn_stage/drurn_stage4", () -> new Item(
+            (new Item.Properties())
+    ));
+    public static final RegistryObject<Item> DRURN_STAGE_DRURN_STAGE5 = ITEMS.register("drurn_stage/drurn_stage5", () -> new Item(
+            (new Item.Properties())
+    ));
+    public static final RegistryObject<Item> DRURN_STAGE_DRURN_STAGE6 = ITEMS.register("drurn_stage/drurn_stage6", () -> new Item(
+            (new Item.Properties())
+    ));
+    public static final RegistryObject<Item> DRURN_STAGE_DRURN_STAGE7 = ITEMS.register("drurn_stage/drurn_stage7", () -> new Item(
+            (new Item.Properties())
+    ));
+    public static final RegistryObject<Item> DRURN_STAGE_DRURN_STAGE8 = ITEMS.register("drurn_stage/drurn_stage8", () -> new Item(
+            (new Item.Properties())
+    ));
 }

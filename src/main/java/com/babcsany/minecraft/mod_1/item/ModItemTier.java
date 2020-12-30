@@ -17,7 +17,7 @@ import java.util.function.Supplier;
 public enum ModItemTier implements IItemTier {
     // int harvestLevel, int maxUses, float efficiency, float attackDamage, int
     //enchantability, Supplier<Ingredient> repairMaterial
-    KNURTH(1, 131, 4.0F, 4.0F, 1, () -> Ingredient.fromItems(BlockInit.KNURTH.get()));
+    KNURTH(1, 286, 6.0F, 4.0F, 1, () -> Ingredient.fromItems(BlockInit.KNURTH.get()));
     
     private final int harvestLevel;
     private final int maxUses;
