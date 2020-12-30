@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mod_1:item/spawn_eggs/srech_spawn_eggs"
+    "layer0": "mod_1:item/drurn_stage/drurn_stage6"
   }
 }

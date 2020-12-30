@@ -26,14 +26,14 @@ public class ParticleInit {
                     return null;
                 }
             });
-    public static final RegistryObject<ParticleType<BasicParticleType>> KNURTH_FLAME = PARTICLE_TYPES.register(
+    /*public static final RegistryObject<ParticleType<BasicParticleType>> KNURTH_FLAME = PARTICLE_TYPES.register(
             "knurth_flame",
             () -> new ParticleType<BasicParticleType>(false, BasicParticleType.DESERIALIZER) {
                 @Override
                 public Codec<BasicParticleType> func_230522_e_() {
                     return null;
                 }
-            });
+            });*/
 
     @SuppressWarnings("resource")
     @SubscribeEvent

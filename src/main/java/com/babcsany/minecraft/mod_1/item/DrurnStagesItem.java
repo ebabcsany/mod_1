@@ -32,6 +32,10 @@ public class DrurnStagesItem extends Item {
          serverplayerentity.addStat(Stats.ITEM_USED.get(this));
       }
 
+      if (entityLiving instanceof PlayerEntity) {
+         stack.shrink(1);
+      }
+
       return stack.isEmpty() ? new ItemStack(ItemInit.DRURN_STAGE8.get()) : stack;
    }
 

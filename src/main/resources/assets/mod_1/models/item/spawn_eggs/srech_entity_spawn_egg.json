@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mod_1:item/spawn_eggs/srech_entity_spawn_egg"
+  }
+}
